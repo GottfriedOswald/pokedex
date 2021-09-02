@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="pokestyle.css">
+    <script src="script.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <!-- Schriftart einbinden -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body onload="loadPokemon()">
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Pokedex</span>
+        </div>
+    </nav>
+
+    <div class="viewScreen">
+
+        <div class="shortCardArea" id="identity">
+
+            <!-- <div class="shortPokeInfoCard m-3" style="background-color:rgba(72, 208, 176, 1)">
+                <p id=" pokemon_name " class="shortPokeInfoName ">Bulbasaur</p>
+                <div class="shortPokeInfo ">
+                    <div class="shortPokeInfoTextFrame ">
+                        <div class="shortPokeInfoText ">Info 1</div>
+                        <div class="shortPokeInfoText ">Info 2</div>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png " alt="Image of a Pokemon " id="pokemon_img " class="PokemonPicSize ">
+                </div>
+            </div> -->
+        </div>
+
+        <div class="detailCardArea flex-center-middle flex-column ">
+            <div class="detailCard ">
+                <p>Bulbasaur</p>
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png " alt="Image of a Pokemon " id="pokemon_img " class="PokemonDetailPic ">
+            </div>
+            <div class="detailCardInfo ">test</div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

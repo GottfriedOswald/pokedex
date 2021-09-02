@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    /* background-color: blanchedalmond; */
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    position: sticky !important;
+    top: 0;
+    z-index: 20;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewScreen {
+    display: flex;
+}
+
+.shortCardArea {
+    /* background-color: thistle; */
+    z-index: 10;
+}
+
+.detailCardArea {
+    position: fixed;
+    background-color: #cff1ed;
+    min-height: 100vh;
+    width: -webkit-fill-available;
+}
+
+.shortPokeInfoCard {
+    background-color: rgba(72, 208, 176, 1);
+    width: 200px;
+    height: 200px;
+    color: white;
+    border-radius: 16px;
+}
+
+.PokemonPicSize {
+    width: 100px;
+}
+
+.shortPokeInfoName {
+    padding: 16px;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.shortPokeInfo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shortPokeInfoText {
+    text-align: center;
+    background-color: rgba(134, 255, 143, 1);
+    margin: 8px 0;
+    width: 60px;
+    border-radius: 16px;
+}
+
+.detailCard {
+    background-color: rgba(72, 208, 176, 1);
+    min-width: 500px;
+    min-height: 40vh;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.detailCardInfo {
+    background-color: white;
+    min-width: 500px;
+    min-height: 40vh;
+    border-radius: 32px;
+    margin-top: -32px;
+    margin-left: 50px;
+}
+
+.PokemonDetailPic {
+    width: 300px;
+    margin-bottom: -100px;
+    z-index: 1;
+}
