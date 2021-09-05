@@ -6,7 +6,8 @@ body {
     scroll-behavior: smooth;
     /* background-color: blanchedalmond; */
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Allison', cursive;
 }
 
 .navbar {
@@ -37,7 +38,9 @@ body {
 
 .detailCardArea {
     position: fixed;
-    background-color: #cff1ed;
+    /* background-color: #cff1ed; */
+    background: rgb(2, 0, 36);
+    background: linear-gradient(30deg, rgba(2, 0, 36, 1) 0%, rgba(223, 211, 22, 1) 80%, rgba(0, 212, 255, 1) 100%);
     min-height: 100vh;
     width: -webkit-fill-available;
 }
@@ -68,7 +71,7 @@ body {
 
 .shortPokeInfoText {
     text-align: center;
-    background-color: rgba(134, 255, 143, 1);
+    /* background-color: rgba(134, 255, 143, 1); */
     margin: 8px 0;
     width: 60px;
     border-radius: 16px;
@@ -80,7 +83,7 @@ body {
     min-height: 40vh;
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
-    margin-left: 50px;
+    margin-left: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,11 +96,101 @@ body {
     min-height: 40vh;
     border-radius: 32px;
     margin-top: -32px;
-    margin-left: 50px;
+    margin-left: 150px;
 }
 
 .PokemonDetailPic {
     width: 300px;
-    margin-bottom: -100px;
+    margin-bottom: -10px;
     z-index: 1;
+}
+
+.grass {
+    background: rgb(72, 195, 176);
+    background: radial-gradient(circle, rgba(72, 195, 176, 1) 70%, rgba(72, 208, 176, 1) 100%);
+}
+
+.fire {
+    background: rgb(251, 90, 108);
+    background: radial-gradient(circle, rgba(251, 90, 108, 1) 70%, rgba(251, 108, 108, 1) 100%);
+}
+
+.water {
+    background: rgb(40, 200, 252);
+    background: radial-gradient(circle, rgba(40, 200, 252, 1) 70%, rgba(40, 220, 252, 1) 100%);
+}
+
+.bug {
+    background: rgb(247, 185, 109);
+    background: radial-gradient(circle, rgba(247, 185, 109, 1) 70%, rgba(247, 202, 109, 1) 100%);
+}
+
+.normal {
+    background: rgb(227, 210, 220);
+    background: radial-gradient(circle, rgba(227, 210, 220, 1) 70%, rgba(227, 225, 220, 1) 100%);
+}
+
+.poison {
+    background: rgb(247, 220, 188);
+    background: radial-gradient(circle, rgba(247, 220, 188, 1) 70%, rgba(247, 233, 188, 1) 100%);
+}
+
+.electric {
+    background: rgb(226, 180, 0);
+    background: radial-gradient(circle, rgba(226, 180, 0, 1) 70%, rgba(226, 199, 0, 1) 100%);
+}
+
+.ground {
+    background: rgb(181, 155, 145);
+    background: radial-gradient(circle, rgba(181, 155, 145, 1) 70%, rgba(181, 173, 145, 1) 100%);
+}
+
+.fairy {
+    background: rgb(232, 195, 235);
+    background: radial-gradient(circle, rgba(232, 195, 235, 1) 70%, rgba(232, 209, 235, 1) 100%);
+}
+
+.fighting {
+    background: rgb(240, 165, 182);
+    background: radial-gradient(circle, rgba(240, 165, 182, 1) 70%, rgba(240, 182, 182, 1) 100%);
+}
+
+.psychic {
+    background: rgb(232, 190, 227);
+    background: radial-gradient(circle, rgba(232, 190, 227, 1) 70%, rgba(232, 207, 227, 1) 100%);
+}
+
+.rock {
+    background: rgb(181, 158, 145);
+    background: radial-gradient(circle, rgba(181, 158, 145, 1) 70%, rgba(181, 173, 145, 1) 100%);
+}
+
+.ghost {
+    background: rgb(207, 176, 205);
+    background: radial-gradient(circle, rgba(207, 176, 205, 1) 70%, rgba(207, 196, 205, 1) 100%);
+}
+
+.ice {
+    background: rgb(197, 206, 222);
+    background: radial-gradient(circle, rgba(197, 206, 222, 1) 70%, rgba(197, 221, 222, 1) 100%);
+}
+
+.dragon {
+    background: rgb(232, 192, 207);
+    background: radial-gradient(circle, rgba(232, 192, 207, 1) 70%, rgba(232, 207, 207, 1) 100%);
+}
+
+.dark {
+    background: rgb(61, 26, 52);
+    background: radial-gradient(circle, rgba(61, 26, 52, 1) 70%, rgba(61, 46, 52, 1) 100%);
+}
+
+.steel {
+    background: rgb(120, 120, 120);
+    background: radial-gradient(circle, rgba(120, 120, 120, 1) 70%, rgba(147, 147, 147, 1) 100%);
+}
+
+.flying {
+    background: rgb(116, 157, 216);
+    background: radial-gradient(circle, rgba(116, 157, 216, 1) 70%, rgba(116, 172, 216, 1) 100%);
 }

@@ -1,6 +1,6 @@
 async function loadPokemon() {
 
-    let url = 'https://pokeapi.co/api/v2/pokemon/?limit=99&offset=0';
+    let url = 'https://pokeapi.co/api/v2/pokemon/?limit=15&offset=1099';
 
     // hier werden eine bestimmte Anzahl an Pokemon vom Server geladen 
     let response = await fetch(url);
@@ -78,6 +78,18 @@ function backgroundColorPokemonCard(kindOfPokemon) {
             return '#e8cfcf';
             break;
 
+        case 'dark':
+            return '#3d2e34';
+            break;
+
+        case 'steel':
+            return '#939393';
+            break;
+
+        case 'flying':
+            return '#74acd8';
+            break;
+
         default:
             return 'rgba(0, 0, 176, 1)';
             break;
@@ -112,12 +124,12 @@ async function renderPokemonShortInfo(allPokemon) {
 
 
         document.getElementById('identity').innerHTML += `
-            <div class="shortPokeInfoCard m-3" style="background-color:${bgColorPokeCard}">
+            <div class="shortPokeInfoCard m-3" style="background-color:${bgColorPokeCard}" onclick = "showDetailCard(${i})">
                 <p id="pokemon_name" class="shortPokeInfoName">${currentPokemon['name']}</p>
                     <div class="shortPokeInfo">
                     <div class="shortPokeInfoTextFrame">
-                        <div class="shortPokeInfoText" id="infoKindOfPokemon">${kindOfPokemon}</div>
-                        <div class="shortPokeInfoText" id="infofeatureOfPokemon">${featureOfPokemon}</div>
+                        <div class="shortPokeInfoText ${kindOfPokemon}" id="infoKindOfPokemon">${kindOfPokemon}</div>
+                        <div class="shortPokeInfoText ${kindOfPokemon}" id="infofeatureOfPokemon">${featureOfPokemon}</div>
                     </div>
                         <img src=${currentPokemon['sprites']['other']['official-artwork']['front_default']} alt="Image of a Pokemon" id="pokemon_img" class="PokemonPicSize">
                     </div>
