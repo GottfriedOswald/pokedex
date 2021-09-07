@@ -1,6 +1,6 @@
 async function loadPokemon() {
 
-    let url = 'https://pokeapi.co/api/v2/pokemon/?limit=15&offset=1099';
+    let url = 'https://pokeapi.co/api/v2/pokemon/?limit=36&offset=0';
 
     // hier werden eine bestimmte Anzahl an Pokemon vom Server geladen 
     let response = await fetch(url);
