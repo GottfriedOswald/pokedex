@@ -1,6 +1,10 @@
+// globale Variable um diese in anderen Funktionen zu verwenden
+// let currentPokemon;
+let pokemons = [];
+
 async function loadPokemon() {
 
-    let url = 'https://pokeapi.co/api/v2/pokemon/?limit=36&offset=0';
+    let url = 'https://pokeapi.co/api/v2/pokemon/?limit=6&offset=0';
 
     // hier werden eine bestimmte Anzahl an Pokemon vom Server geladen 
     let response = await fetch(url);
@@ -11,11 +15,12 @@ async function loadPokemon() {
     renderPokemonShortInfo(allPokemon);
 }
 
-
+// die url eines einzelnen Pokemons ermitteln
 function getCurrentPokemonUrl(allPokemon, i) {
     return allPokemon['results'][i]['url'];
 }
 
+// hintergrundfarbe der Pokemonarten zuweisen
 function backgroundColorPokemonCard(kindOfPokemon) {
     switch (kindOfPokemon) {
         case 'grass':
@@ -108,8 +113,10 @@ async function renderPokemonShortInfo(allPokemon) {
         let responseCurrentPokemon = await fetch(currentPokemonUrl);
         let currentPokemon = await responseCurrentPokemon.json();
         console.log(currentPokemon);
+        //aktuelles Pokemon dem Array hinzufügen
+        pokemons.push(currentPokemon);
 
-
+        // die Menge von Einträgen in "types" ermitteln da manche Pokemon nur einen Eintrag haben
         let kindOfPokemon;
         let featureOfPokemon;
         if (currentPokemon['types'].length < 2) {
@@ -122,18 +129,40 @@ async function renderPokemonShortInfo(allPokemon) {
 
         let bgColorPokeCard = backgroundColorPokemonCard(kindOfPokemon);
 
-
+        // die Hintergrundfarbe zum hervorheben des 'shortPoketInfoText' wird in CSS-Klassen deklariert. 
+        // Die CSS-KLassen haben denselben Namen wie der erste Eintrag von "types" des Pokemon (aus dem API)
+        // deswegen kann die Variable als Klassenname in die Classlist eingetragen werden
         document.getElementById('identity').innerHTML += `
-            <div class="shortPokeInfoCard m-3" style="background-color:${bgColorPokeCard}" onclick = "showDetailCard(${i})">
+            <div class="shortPokeInfoCard m-3" style="background-color:${bgColorPokeCard}" onclick="setDetailCard(${i})">
                 <p id="pokemon_name" class="shortPokeInfoName">${currentPokemon['name']}</p>
                     <div class="shortPokeInfo">
-                    <div class="shortPokeInfoTextFrame">
-                        <div class="shortPokeInfoText ${kindOfPokemon}" id="infoKindOfPokemon">${kindOfPokemon}</div>
-                        <div class="shortPokeInfoText ${kindOfPokemon}" id="infofeatureOfPokemon">${featureOfPokemon}</div>
-                    </div>
-                        <img src=${currentPokemon['sprites']['other']['official-artwork']['front_default']} alt="Image of a Pokemon" id="pokemon_img" class="PokemonPicSize">
+                        <div class="shortPokeInfoTextFrame">
+                            <div class="shortPokeInfoText ${kindOfPokemon}" id="infoKindOfPokemon">${kindOfPokemon}</div>
+                            <div class="shortPokeInfoText ${kindOfPokemon}" id="infofeatureOfPokemon">${featureOfPokemon}</div>
+                        </div>
+                            <img src=${currentPokemon['sprites']['other']['official-artwork']['front_default']} alt="Image of a Pokemon" class="PokemonPicSize">
+                        </div>
                     </div>
             </div>
         `;
     }
+
+
+}
+
+function setDetailCard(index) {
+    document.getElementById('detailCardPokemonName').innerHTML = pokemons[index]['name'];
+    document.getElementById('pokemon_img').src = pokemons[index]['sprites']['other']['official-artwork']['front_default'];
+    console.log(pokemons[index]['sprites']['other']['official-artwork']['front_default']);
+    showDetailCard();
+}
+
+function showDetailCard() {
+    document.getElementById('detailCardFrame').classList.remove('d-none');
+    document.getElementById('identity').classList.add('d-none');
+}
+
+function showShortInfoPokemonCards() {
+    document.getElementById('detailCardFrame').classList.add('d-none');
+    document.getElementById('identity').classList.remove('d-none');
 }

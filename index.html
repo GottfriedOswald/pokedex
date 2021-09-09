@@ -16,9 +16,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allison&display=swap" rel="stylesheet"> -->
 </head>
 
 <body onload="loadPokemon()">
@@ -35,15 +32,23 @@
         </div>
 
         <div class="detailCardArea flex-center-middle flex-column">
-            <div class="detailCardFrame d-none">
+            <div class="detailCardFrame d-none" id="detailCardFrame" onclick="showShortInfoPokemonCards()">
                 <div class="detailCard">
-                    <p>Bulbasaur</p>
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png " alt="Image of a Pokemon " id="pokemon_img " class="PokemonDetailPic ">
+                    <div class="detailCardHeader">
+                        <p id="detailCardPokemonName"></p>
+                        <div class="detailCardPokemonInfo">
+                            <p class="shortPokeInfoText grass">info1</p>
+                            <p class="shortPokeInfoText grass">info2</p>
+                        </div>
+                    </div>
+
+                    <div class="detailCardPic">
+                        <img src='' alt="Image of a Pokemon" id="pokemon_img" class="PokemonDetailPic">
+                    </div>
                 </div>
                 <div class="detailCardInfo ">test</div>
             </div>
         </div>
-
     </div>
 
 </body>
