@@ -4,7 +4,7 @@ let pokemons = [];
 
 async function loadPokemon() {
 
-    let url = 'https://pokeapi.co/api/v2/pokemon/?limit=6&offset=0';
+    let url = 'https://pokeapi.co/api/v2/pokemon/?limit=12&offset=0';
 
     // hier werden eine bestimmte Anzahl an Pokemon vom Server geladen 
     let response = await fetch(url);
@@ -151,9 +151,41 @@ async function renderPokemonShortInfo(allPokemon) {
 }
 
 function setDetailCard(index) {
-    document.getElementById('detailCardPokemonName').innerHTML = pokemons[index]['name'];
-    document.getElementById('pokemon_img').src = pokemons[index]['sprites']['other']['official-artwork']['front_default'];
-    console.log(pokemons[index]['sprites']['other']['official-artwork']['front_default']);
+
+    document.getElementById('detailCardArea').innerHTML = ``;
+
+    // die Menge von Einträgen in "types" ermitteln da manche Pokemon nur einen Eintrag haben
+    let kindOfPokemon;
+    let featureOfPokemon;
+    if (pokemons[index]['types'].length < 2) {
+        kindOfPokemon = pokemons[index]['types'][0]['type']['name'];
+        featureOfPokemon = '';
+    } else {
+        kindOfPokemon = pokemons[index]['types'][0]['type']['name'];
+        featureOfPokemon = pokemons[index]['types'][1]['type']['name'];
+    }
+
+    let bgColorPokeCard = backgroundColorPokemonCard(kindOfPokemon);
+
+    document.getElementById('detailCardArea').innerHTML = `
+    <div class="detailCardFrame d-none" id="detailCardFrame" onclick="showShortInfoPokemonCards()">
+        <div class="detailCard" style="background-color:${bgColorPokeCard}">
+            <div class="detailCardHeader">
+                <p id="detailCardPokemonName">${pokemons[index]['name']}</p>
+                <div class="detailCardPokemonInfo">
+                    <div class="shortPokeInfoText ${kindOfPokemon}">${kindOfPokemon}</div>
+                    <div class="shortPokeInfoText ${kindOfPokemon}">${featureOfPokemon}</div>
+                </div>
+            </div>
+
+            <div class="detailCardPic">
+                <img src='${pokemons[index]['sprites']['other']['official-artwork']['front_default']}' alt="Image of a Pokemon" id="pokemon_img" class="PokemonDetailPic">
+            </div>
+        </div>
+        <div class="detailCardInfo ">test</div>
+    </div>
+`;
+
     showDetailCard();
 }
 
