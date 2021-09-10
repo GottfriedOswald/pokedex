@@ -182,7 +182,12 @@ function setDetailCard(index) {
                 <img src='${pokemons[index]['sprites']['other']['official-artwork']['front_default']}' alt="Image of a Pokemon" id="pokemon_img" class="PokemonDetailPic">
             </div>
         </div>
-        <div class="detailCardInfo ">test</div>
+        <div class="detailCardInfo">
+        
+        test
+        
+        
+        </div>
     </div>
 `;
 
