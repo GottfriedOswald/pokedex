@@ -10,15 +10,39 @@ body {
     /* font-family: 'Allison', cursive; */
 }
 
+td,
+th {
+    padding: 0 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.button {
+    z-index: 40;
+    color: blanchedalmond;
+}
+
+tbody {
+    padding: 16px 0;
+}
+
 .navbar {
     position: sticky !important;
     top: 0;
     z-index: 20;
 }
 
+.h-center {
+    justify-content: center;
+}
+
 .flex-column {
     display: flex;
     flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
 }
 
 .flex-center-middle {
@@ -100,7 +124,7 @@ body {
     /* justify-content: center; */
     z-index: 20;
     color: cornsilk;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .detailCardHeader {
@@ -136,8 +160,18 @@ body {
 
 .PokemonDetailPic {
     width: 300px;
-    /* margin-bottom: -10px; */
+    margin: -70px -40px 16px 60px;
     z-index: 30;
+}
+
+.PokemonDetailInfoPic {
+    height: 105px;
+    margin: 32px 32px 16px 32px;
+}
+
+.PokemonDetailInfoSmallPic {
+    height: 80px;
+    margin-top: 32px;
 }
 
 .grass {
