@@ -17,9 +17,18 @@ th {
     font-style: italic;
 }
 
+.button-section {
+    display: flex;
+    justify-content: center;
+}
+
 .button {
     z-index: 40;
-    color: blanchedalmond;
+    background-color: lightgray;
+    width: 150px;
+    height: 60px;
+    border-radius: 16px;
+    margin: 0 16px 16px 16px;
 }
 
 tbody {
@@ -60,7 +69,7 @@ tbody {
     flex-wrap: wrap;
     justify-content: center;
     z-index: 1;
-    margin: 0 16%;
+    margin: 0 24%;
 }
 
 .detailCardArea {
@@ -262,6 +271,12 @@ tbody {
 .flying {
     background: rgb(116, 157, 216);
     background: radial-gradient(circle, rgba(116, 157, 216, 1) 70%, rgba(116, 172, 216, 1) 100%);
+}
+
+@media(max-width: 1350px) {
+    .shortCardArea {
+        margin: 16%;
+    }
 }
 
 @media(max-width: 350px) {

@@ -5,11 +5,12 @@
 // globale Variable um diese in anderen Funktionen zu verwenden
 // let currentPokemon;
 let pokemons = [];
-let start = 6;
-let offset = 60;
+let start = 12;
+let offset = 0;
+let amountPokemons = 0;
 
 async function loadPokemon() {
-
+    pokemons = [];
     let url = `https://pokeapi.co/api/v2/pokemon/?limit=${start}&offset=${offset}`;
 
     // hier werden eine bestimmte Anzahl an Pokemon vom Server geladen 
@@ -17,8 +18,23 @@ async function loadPokemon() {
     // console.log(response);
     let allPokemon = await response.json();
     console.log(allPokemon);
+    amountPokemons = allPokemon['count'];
+    console.log(amountPokemons);
 
     renderPokemonShortInfo(allPokemon);
+}
+
+function showNextPokemons() {
+    offset += 12;
+    loadPokemon();
+}
+
+function showPreviewPokemons() {
+    offset -= 12;
+    if (offset < 0) {
+        offset = 0;
+    }
+    loadPokemon();
 }
 
 // die url eines einzelnen Pokemons ermitteln
@@ -264,10 +280,12 @@ function showDetailCard() {
     document.getElementById('detailCardArea').style = "position:absolute";
     document.getElementById('detailCardFrame').classList.remove('d-none');
     document.getElementById('identity').classList.add('d-none');
+    document.getElementById('button-section').classList.add('d-none');
 }
 
 function showShortInfoPokemonCards() {
     document.getElementById('detailCardArea').style = "position:fixed";
     document.getElementById('detailCardFrame').classList.add('d-none');
     document.getElementById('identity').classList.remove('d-none');
+    document.getElementById('button-section').classList.remove('d-none');
 }
