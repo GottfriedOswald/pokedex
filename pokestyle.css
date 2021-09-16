@@ -101,6 +101,10 @@ tbody {
     font-size: 1.5rem;
 }
 
+.shortPokeInfoID {
+    margin-left: 8px;
+}
+
 .shortPokeInfo {
     display: flex;
     justify-content: space-around;
@@ -275,13 +279,40 @@ tbody {
 
 @media(max-width: 1350px) {
     .shortCardArea {
-        margin: 16%;
+        margin: 0 16%;
+    }
+}
+
+@media(max-width: 599px) {
+    .PokemonDetailPic {
+        width: 200px;
+    }
+    .detailCardInfo {
+        min-width: 300px;
+    }
+    .detailCard {
+        min-width: 300px;
     }
 }
 
 @media(max-width: 350px) {
     .shortCardArea {
         margin: 0;
+    }
+    .detailCardInfo {
+        min-width: 200px;
+    }
+    .detailCard {
+        min-width: 200px;
+    }
+    .PokemonDetailPic {
+        width: 150px;
+        margin: -20px -40px 16px 60px;
+        z-index: 30;
+    }
+    .PokemonDetailInfoPic {
+        height: 105px;
+        margin: 32px 16px 16px 16px;
     }
 }
 

@@ -19,13 +19,16 @@ async function loadPokemon() {
     let allPokemon = await response.json();
     console.log(allPokemon);
     amountPokemons = allPokemon['count'];
-    console.log(amountPokemons);
+    // console.log(amountPokemons);
 
     renderPokemonShortInfo(allPokemon);
 }
 
 function showNextPokemons() {
     offset += 12;
+    if (offset > amountPokemons - 10) {
+        offset = 0;
+    }
     loadPokemon();
 }
 
@@ -175,6 +178,7 @@ async function renderPokemonShortInfo(allPokemon) {
                         </div>
                             <img src=${pokemons[i]['sprites']['other']['official-artwork']['front_default']} alt="Image of a Pokemon" class="PokemonPicSize">
                         </div>
+                        <p class="shortPokeInfoID">ID #${pokemons[i]['id']}</p>
                     </div>
             </div>
         `;
