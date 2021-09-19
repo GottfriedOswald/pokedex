@@ -191,11 +191,6 @@ tbody {
     width: 250px;
 }
 
-
-/* .progress span {
-    width: 120px;
-} */
-
 .grass {
     background: rgb(72, 195, 176);
     background: radial-gradient(circle, rgba(72, 195, 176, 1) 70%, rgba(72, 208, 176, 1) 100%);
@@ -298,9 +293,17 @@ tbody {
     }
     .detailCardInfo {
         min-width: 300px;
+        min-height: 58vh;
     }
     .detailCard {
         min-width: 300px;
+    }
+    .flex-row {
+        display: block;
+        /* justify-content: center;
+        align-items: center; */
+        text-align: left;
+        margin: 0 8%;
     }
 }
 
