@@ -1,9 +1,6 @@
-// window.onscroll = function(ev) {
-//     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {};
-// }
-
-// globale Variable um diese in anderen Funktionen zu verwenden
-// let currentPokemon;
+/**
+ * globale Variable um diese in anderen Funktionen zu verwenden
+ */
 let pokemons = [];
 let start = 12;
 let offset = 0;
@@ -13,13 +10,13 @@ async function loadPokemon() {
     pokemons = [];
     let url = `https://pokeapi.co/api/v2/pokemon/?limit=${start}&offset=${offset}`;
 
-    // hier werden eine bestimmte Anzahl an Pokemon vom Server geladen 
+    /**
+     * hier werden eine bestimmte Anzahl an Pokemon vom Server geladen
+     */
     let response = await fetch(url);
-    // console.log(response);
     let allPokemon = await response.json();
     console.log(allPokemon);
     amountPokemons = allPokemon['count'];
-    // console.log(amountPokemons);
 
     renderPokemonShortInfo(allPokemon);
 }
@@ -271,16 +268,51 @@ function setDetailCard(index) {
                         </tbody>
                     </table>
                 </div>
+
+                <div class="flex-column" id="progress-bar"><div>
+
             </div>
 
         </div>
     </div>
 `;
-
-    showDetailCard();
+    showDetailCard(index);
 }
 
-function showDetailCard() {
+function showProgressBar(index) {
+    document.getElementById('progress-bar').innerHTML = ``;
+    document.getElementById('progress-bar').innerHTML = `
+
+        <span>${pokemons[index]['stats'][0]['stat']['name']}</span>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: ${pokemons[index]['stats'][0]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <span>${pokemons[index]['stats'][1]['stat']['name']}</span>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: ${pokemons[index]['stats'][1]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <span>${pokemons[index]['stats'][2]['stat']['name']}</span>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: ${pokemons[index]['stats'][2]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <span>${pokemons[index]['stats'][3]['stat']['name']}</span>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: ${pokemons[index]['stats'][3]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <span>${pokemons[index]['stats'][5]['stat']['name']}</span>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: ${pokemons[index]['stats'][5]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    `;
+
+}
+
+function showDetailCard(index) {
+    showProgressBar(index);
     document.getElementById('detailCardArea').style = "position:absolute";
     document.getElementById('detailCardFrame').classList.remove('d-none');
     document.getElementById('identity').classList.add('d-none');
