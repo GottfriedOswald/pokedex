@@ -283,27 +283,27 @@ function showProgressBar(index) {
     document.getElementById('progress-bar').innerHTML = ``;
     document.getElementById('progress-bar').innerHTML = `
 
-        <span>${pokemons[index]['stats'][0]['stat']['name']}</span>
+        <span>${pokemons[index]['stats'][0]['stat']['name']} ${pokemons[index]['stats'][0]['base_stat']}</span>
         <div class="progress">
             <div class="progress-bar progress-bar-striped" role="progressbar" style="width: ${pokemons[index]['stats'][0]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
 
-        <span>${pokemons[index]['stats'][1]['stat']['name']}</span>
+        <span>${pokemons[index]['stats'][1]['stat']['name']} ${pokemons[index]['stats'][1]['base_stat']}</span>
         <div class="progress">
             <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: ${pokemons[index]['stats'][1]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
 
-        <span>${pokemons[index]['stats'][2]['stat']['name']}</span>
+        <span>${pokemons[index]['stats'][2]['stat']['name']} ${pokemons[index]['stats'][2]['base_stat']}</span>
         <div class="progress">
             <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: ${pokemons[index]['stats'][2]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
 
-        <span>${pokemons[index]['stats'][3]['stat']['name']}</span>
+        <span>${pokemons[index]['stats'][3]['stat']['name']} ${pokemons[index]['stats'][3]['base_stat']}</span>
         <div class="progress">
             <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: ${pokemons[index]['stats'][3]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
 
-        <span>${pokemons[index]['stats'][5]['stat']['name']}</span>
+        <span>${pokemons[index]['stats'][5]['stat']['name']} ${pokemons[index]['stats'][5]['base_stat']}</span>
         <div class="progress">
             <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: ${pokemons[index]['stats'][5]['base_stat']}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
